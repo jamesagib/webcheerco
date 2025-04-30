@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebCheer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: #f9f9f9;
+        color: #111;
+        padding: 48px 20px;
+        text-align: center;
+      }
+      .container {
+        max-width: 540px;
+        margin: 0 auto;
+        animation: fadeIn 0.9s ease-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 20px;
+      }
+      .intro {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 28px;
+      }
+      .section {
+        padding: 32px 0;
+        border-top: 1px solid #ddd;
+      }
+      .section:first-of-type {
+        border-top: none;
+      }
+      .section-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #888;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+      }
+      .highlight {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 6px;
+      }
+      .note {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 24px;
+      }
+      .button {
+        display: inline-block;
+        background: #000;
+        color: #fff;
+        text-decoration: none;
+        padding: 14px 28px;
+        font-weight: 600;
+        border-radius: 6px;
+        margin-bottom: 16px;
+      }
+      .aside {
+        font-size: 0.9rem;
+        color: #666;
+        font-style: italic;
+        margin-bottom: 40px;
+      }
+      .inhouse {
+        font-size: 0.95rem;
+        color: #444;
+        max-width: 460px;
+        margin: 0 auto 20px;
+      }
+      #countdown {
+        margin-top: 12px;
+        font-size: 1.05rem;
+        color: #222;
+        font-family: monospace;
+      }
+      .blinking-cursor::after {
+        content: "|";
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0; }
+      }
+
+      /* 🔽 Mobile Responsiveness */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+        .highlight {
+          font-size: 1.8rem;
+        }
+        .button {
+          padding: 12px 20px;
+          font-size: 0.95rem;
+        }
+        .section {
+          padding: 24px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      
+      <div class="intro">We help your startup move faster—without adding to your calendar.</div>
+
+      <div class="section">
+        <div class="section-label">What We Do</div>
+        <h1>One automation built for you every week</h1>
+        <p>No meetings. No back-and-forth. Just results. You keep everything we build — forever.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Pricing</div>
+        <div class="highlight">$100/week</div>
+        <div class="note">Cancel anytime. Keep all the automations we build.</div>
+        <a href="https://buy.stripe.com/4gw02EaQwbWD6hq14j" class="button">Request your first automation</a>
+        <div class="aside">The site loads fast. So will your team after our automations.</div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Why Not In-House?</div>
+        <div class="inhouse">
+          <p><strong>“Why not do it in-house?”</strong><br />You could. But your team’s already slammed. We handle it quietly and efficiently — so you don’t have to.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Next Delivery</div>
+        <p id="countdown" class="blinking-cursor"></p>
+      </div>
+
+    </div>
+
+    <script>
+      function getNextFridayAt4PM() {
+        const now = new Date();
+        const result = new Date(now);
+        const day = now.getDay();
+        const daysUntilFriday = (5 - day + 7) % 7 || 7;
+        result.setDate(now.getDate() + daysUntilFriday);
+        result.setHours(16, 0, 0, 0);
+        return result;
+      }
+
+      function updateCountdown() {
+        const now = new Date();
+        const deadline = getNextFridayAt4PM();
+        const diff = deadline - now;
+
+        const el = document.getElementById("countdown");
+
+        if (diff <= 0) {
+          el.textContent = "Delivering today at 4PM!";
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        el.textContent = `⏰ Next automation drops in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    </script>
+  </body>
+</html>
