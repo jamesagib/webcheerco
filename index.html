@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebCheer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;1,800&display=swap" rel="stylesheet">    <style>
       * {
         box-sizing: border-box;
       }
-      img {
+      .container > img {
         max-width: 40%;
         height: auto;
         margin-bottom: 20px;
@@ -20,7 +19,7 @@
       }
       body {
         margin: 0;
-        font-family: 'Inter', sans-serif;
+        font-family: 'Nunito';
         background: white;
         color: #111;
         padding: 48px 20px;
@@ -36,7 +35,7 @@
         to { opacity: 1; transform: translateY(0); }
       }
       h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         margin-bottom: 10px;
       }
       p {
@@ -44,158 +43,216 @@
         color: #444;
         margin-bottom: 20px;
       }
-      .intro {
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 28px;
-      }
       .section {
-        padding: 32px 0;
-        border-top: 1px solid #ddd;
+        margin-bottom: 60px;
       }
-      .section:first-of-type {
-        border-top: none;
+      
+      .app-card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 24px;
+        margin: 40px auto;
+        max-width: 600px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        transition: transform 0.2s ease;
+        position: relative;
       }
-      .section-label {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: #888;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-        letter-spacing: 0.5px;
+
+      .app-card:hover {
+        transform: translateY(-2px);
       }
-      .highlight {
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #000;
-        margin-bottom: 6px;
+
+      .app-icon {
+        width: 80px;
+        height: 80px;
+        background: #f5f5f5;
+        border-radius: 16px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
       }
-      .note {
-        font-size: 0.9rem;
+
+      .app-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        margin: 0;
+        max-width: 100%;
+      }
+
+      .app-content {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .app-info {
+        flex: 1;
+      }
+
+      .app-title {
+        font-size: 1.25rem;
+        margin: 0 0 8px 0;
+        font-weight: 800;
+      }
+
+      .app-description {
         color: #666;
-        margin-bottom: 24px;
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
       }
-      .button {
+
+      .app-button {
         display: inline-block;
         background: #000;
         color: #fff;
-        text-decoration: none;
-        padding: 14px 28px;
-        font-weight: 600;
+        padding: 8px 20px;
         border-radius: 6px;
-        margin-bottom: 16px;
-      }
-      .aside {
+        text-decoration: none;
         font-size: 0.9rem;
-        color: #666;
-        font-style: italic;
-        margin-bottom: 40px;
-      }
-      .inhouse {
-        font-size: 0.95rem;
-        color: #444;
-        max-width: 460px;
-        margin: 0 auto 20px;
-      }
-      #countdown {
-        margin-top: 12px;
-        font-size: 1.05rem;
-        color: #222;
-        font-family: monospace;
-      }
-      .blinking-cursor::after {
-        content: "|";
-        animation: blink 1s infinite;
-      }
-      @keyframes blink {
-        0%, 50%, 100% { opacity: 1; }
-        25%, 75% { opacity: 0; }
+        font-weight: 600;
+        transition: opacity 0.2s ease;
+        white-space: nowrap;
+        position: relative;
+        z-index: 2;
       }
 
-      /* 🔽 Mobile Responsiveness */
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 1.5rem;
-        }
-        .highlight {
-          font-size: 1.8rem;
-        }
-        .button {
-          padding: 12px 20px;
-          font-size: 0.95rem;
-        }
-        .section {
-          padding: 24px 0;
-        }
+      .app-button:hover {
+        opacity: 0.9;
+      }
+
+      .app-logo {
+        width: 100%;
+        height: 100%;
+      }
+
+      .app-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .app-card-link:hover .app-card {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        cursor: auto;
+      }
+
+      .app-card.blur {
+        filter: blur(3px);
+        pointer-events: none;
+        position: relative;
+      }
+
+      .coming-soon-wrapper {
+        position: relative;
+        cursor: not-allowed;
+        user-select: text; /* Allow text selection on wrapper */
+      }
+
+      .coming-soon-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        color: black;
+        font-size: 1.2rem;
+        font-weight: bold;
+        pointer-events: none;
+      }
+
+      .footer {
+        margin-top: 60px;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .footer a {
+        color: #666;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .footer a:hover {
+        opacity: 0.7;
+      }
+
+      .blur * {
+        user-select: none;
       }
     </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const wrapper = document.querySelector('.coming-soon-wrapper');
+        
+        wrapper.addEventListener('copy', function(e) {
+          e.preventDefault();
+          const funMessage = "haha you're sneaky...but you'll have to wait :)";
+          e.clipboardData.setData('text/plain', funMessage);
+        });
+
+        wrapper.addEventListener('selectstart', function(e) {
+          // Allow selection to start but prevent actual selecting
+          setTimeout(() => {
+            window.getSelection().removeAllRanges();
+          }, 0);
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="container">
       <img src="logo.png" alt="web cheer logo" class="img">
-      <div class="intro">We help your startup move faster—without adding to your calendar.</div>
-
       <div class="section">
-        <div class="section-label">What We Do</div>
-        <h1>Custom automations for your startup, delivered every Friday @ 4pm</h1>
-        <p>No meetings. No back-and-forth. Just results. You keep everything we build — forever.</p>
+        <div class="section-label"></div>
+        <h1>mission: build tech that improves your life.</h1>
       </div>
 
       <div class="section">
-        <div class="section-label">Pricing</div>
-        <div class="highlight">$100/week</div>
-        <div class="note">Cancel anytime. Keep all the automations we build.</div>
-        <a href="https://buy.stripe.com/4gw02EaQwbWD6hq14j" class="button">Request your first automation</a>
-        <div class="aside">The site loads fast. So will your team after our automations.</div>
-      </div>
+        <a href="https://getwaitlist.com/waitlist/28356" class="app-card-link">
+          <div class="app-card">
+            <div class="app-icon">
+              <img src="jecca.png" alt="App icon" class="app-logo">
+            </div>
+            <div class="app-content">
+              <div class="app-info">
+                <h2 class="app-title">jecca</h2>
+                <p class="app-description">an app for daily tasks</p>
+              </div>
+              <a href="https://getwaitlist.com/waitlist/28356" class="app-button" onclick="event.stopPropagation()">join waitlist</a>
+            </div>
+          </div>
+        </a>
 
-      <div class="section">
-        <div class="section-label">Why Not In-House?</div>
-        <div class="inhouse">
-          <p><strong>“Why not do it in-house?”</strong><br />You could. But your team’s already slammed. We handle it quietly and efficiently — so you don’t have to.</p>
+        <div class="coming-soon-wrapper">
+          <div class="coming-soon-text">coming soon 🤫</div>
+          <div class="app-card blur">
+            <div class="app-icon">
+              <img src="fomo.png" alt="App icon" class="app-logo">
+            </div>
+            <div class="app-content">
+              <div class="app-info">
+                <h2 class="app-title">fomo</h2>
+                <p class="app-description">gamified screen time mangement with friends</p>
+              </div>
+              <span class="app-button">join waitlist</span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="section">
-        <div class="section-label">Next Delivery</div>
-        <p id="countdown" class="blinking-cursor"></p>
+      <div class="footer">
+        made with ❤️ by <a href="https://x.com/agibjames" target="_blank">james agib</a>
       </div>
-
     </div>
-
-    <script>
-      function getNextFridayAt4PM() {
-        const now = new Date();
-        const result = new Date(now);
-        const day = now.getDay();
-        const daysUntilFriday = (5 - day + 7) % 7 || 7;
-        result.setDate(now.getDate() + daysUntilFriday);
-        result.setHours(16, 0, 0, 0);
-        return result;
-      }
-
-      function updateCountdown() {
-        const now = new Date();
-        const deadline = getNextFridayAt4PM();
-        const diff = deadline - now;
-
-        const el = document.getElementById("countdown");
-
-        if (diff <= 0) {
-          el.textContent = "Delivering today at 4PM!";
-          return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-
-        el.textContent = `⏰ Next automation drops in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    </script>
   </body>
 </html>
