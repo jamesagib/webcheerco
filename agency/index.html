@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>webcheerco - Agency</title>
+  <title>webcheer agency - build your MVP in 1 week</title>
 
   <!-- Social Media Preview Tags -->
-  <meta property="og:title" content="WebCheerCo Agency Services">
-  <meta property="og:description" content="Discover the services offered by WebCheerCo Agency.">
-  <meta property="og:image" content="https://webcheer.co/social-preview.jpg"> <!-- Assuming you might use the same preview image or update later -->
+  <meta property="og:title" content="webcheer agency: build your MVP in 1 week for $2,000">
+  <meta property="og:description" content="get your MVP built in one week for $2,000. simple, fast, effective.">
+  <meta property="og:image" content="https://webcheer.co/social-preview.jpg">
   <meta property="og:url" content="https://webcheer.co/agency">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@agibjames"> <!-- Assuming same Twitter handle -->
+  <meta name="twitter:creator" content="@agibjames">
 
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap" rel="stylesheet">
   <style>
@@ -23,74 +23,308 @@
       color: #222;
       max-width: 800px;
       margin: auto;
+      font-size: 18px;
     }
     img.header-image {
       max-width: 100%;
       height: auto;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
       border-radius: 12px;
     }
-    h1 {
+    section {
+      margin: 2em 0;
+      padding-top: 2em;
+      border-top: 1px solid #eee;
+    }
+    section:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+    h1, h2 {
+      font-size: 3em;
+      font-weight: 800;
+      margin-bottom: 0.3em;
+      line-height: 1.1;
+    }
+    h2 {
       font-size: 2.5em;
       font-weight: 800;
       margin-bottom: 0.3em;
+      line-height: 1.1;
     }
     p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       line-height: 1.6;
       margin-bottom: 1.5em;
     }
     ul {
       padding-left: 1.5em;
+      list-style: none;
     }
     li {
       margin-bottom: 1em;
+      position: relative;
+    }
+    li::before {
+      content: "→";
+      position: absolute;
+      left: -1.5em;
+      color: #000;
     }
     strong {
       font-weight: 800;
     }
-    footer {
-      margin-top: 3em;
-      border-top: 1px solid #eee;
-      padding-top: 1.5em;
-      font-size: 0.95em;
-      color: #666;
-      text-align: center;
-    }
-    footer a {
-      color: #666;
+    .cta-button {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 14px 28px;
       text-decoration: none;
-      margin: 0 10px;
+      border-radius: 8px;
+      font-weight: 800;
+      margin: 1em 1em 1em 0;
     }
-    footer a:hover {
-      text-decoration: underline;
+    .async-button {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 800;
+      margin: 1em 1em 1em 0;
+      border: 2px solid #000;
+      position: relative;
+      padding-right: 40px;
+    }
+    .async-button::after {
+      content: "→";
+      position: absolute;
+      right: 20px;
+      transition: transform 0.2s ease;
+    }
+    .async-button:hover::after {
+      transform: translateX(5px);
+    }
+    .async-button:hover {
+      background: #f8f8f8;
+    }
+    .process-list {
+      counter-reset: process;
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2em;
+    }
+    .process-list li {
+      counter-increment: process;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1.5em;
+      padding: 1em 0;
+    }
+    .process-list li::before {
+      content: "0" counter(process);
+      position: static;
+      font-weight: 800;
+      color: #000;
+      margin-left: auto;
+      opacity: 0.3;
+      font-size: 1.8em;
+    }
+    .process-icon {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+    .process-content {
+      flex: 1;
+    }
+    .process-content strong {
+      display: block;
+      margin-bottom: 0.3em;
+      font-size: 1.3em;
+    }
+    .process-content span {
+      color: #666;
+      font-size: 1.1em;
+    }
+    .discovery-call {
+      background: #f8f8f8;
+      padding: 2em;
+      border-radius: 12px;
+      margin-bottom: 2em;
+    }
+    .discovery-call h3 {
+      font-size: 1.6em;
+      margin: 0 0 0.5em 0;
+    }
+    .discovery-call p {
+      margin: 0;
+      color: #666;
+      font-size: 1.2em;
+    }
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2em;
+      margin: 2em 0;
+    }
+    .app-card {
+      background: #f8f8f8;
+      padding: 1.5em;
+      border-radius: 12px;
+    }
+    .app-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1em;
+    }
+    .app-card h3 {
+      font-size: 1.2em;
+      margin: 0 0 0.5em 0;
+    }
+    .async-option {
+      margin-top: 2em;
+      padding-top: 2em;
+      border-top: 1px solid #eee;
+    }
+    .async-option h3 {
+      font-size: 1.4em;
+      margin: 0 0 0.5em 0;
+    }
+    .async-option p {
+      color: #666;
+      margin-bottom: 1em;
+      font-size: 1.1em;
+    }
+    .quick-start {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 0.5em;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+    }
+    .logo {
+      height: 80px;
+    }
+    .async-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .about-us-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 2em 0 1em 0;
+    }
+    .about-us-caption {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 2em;
+      font-style: italic;
     }
   </style>
-  <!-- You might want to link to a shared CSS file if styles are identical or largely similar -->
-  <meta name="google-site-verification" content="TmCwRb3we8bfGH0Kk5010adI0xih6V1B9PG4zUFRp2Q" /> <!-- Assuming same verification code -->
 </head>
 <body>
-  <!-- You might want a different header image for the agency page -->
-  <img src="../social-preview.jpg" alt="WebCheerCo Agency" class="header-image" />
+  <img src="../logo.png" alt="webcheer" class="logo">
 
-  <h1>WebCheerCo Agency</h1>
-  <p><em>Your partner in building exceptional web experiences.</em></p>
+  <section id="hero">
+    <h1>build your MVP in one week</h1>
+    <p><em>get your app built and launched for $2,000. no complexity, no long timelines — just results.</em></p>
+    <div class="hero-buttons">
+      <a href="https://cal.com/james-agib/mvp" class="cta-button">schedule a call</a>
+      <a href="https://tally.so/r/315qdO" class="async-button">submit idea async</a>
+    </div>
+  </section>
 
-  <p>Welcome to the WebCheerCo Agency page. We specialize in:</p>
-  <ul>
-    <li><strong>🌐 Custom Web Development:</strong> Tailored solutions to meet your unique business needs.</li>
-    <li><strong>🎨 UI/UX Design:</strong> Creating intuitive and engaging user interfaces.</li>
-    <li><strong>🚀 Performance Optimization:</strong> Ensuring your web applications are fast and reliable.</li>
-    <li><strong>💡 Strategic Consultation:</strong> Helping you navigate the digital landscape.</li>
-  </ul>
+  <section id="why">
+    <h2>why choose us</h2>
+    <ul>
+      <li><strong>one week delivery</strong> — your MVP built and ready to launch in 7 days</li>
+      <li><strong>fixed price</strong> — $2,000 flat fee, no hidden costs or surprises</li>
+      <li><strong>core features</strong> — we focus on what matters to validate your idea</li>
+      <li><strong>full ownership</strong> — get all source code and assets upon completion</li>
+    </ul>
 
-  <p>Let's build something amazing together.</p>
+    <img src="about-us.png" alt="About WebCheer Team" class="about-us-image">
+    <p class="about-us-caption">hey! we're mark and james agib. we're twins who have a dream of building apps that benefit society. to help fund the apps we'd like to build, we're building this agency :)</p>
+  </section>
 
-  <footer>
-    <!-- You might want different links or additional links for the agency page -->
-    <a href="/jecca/privacypolicy">Privacy Policy</a> |
-    <a href="/jecca/termsofservice">Terms of Service</a>
-    <!-- Consider adding a contact link or agency-specific links here -->
-  </footer>
+  <section id="process">
+    <h2>our process</h2>
+    
+    <div class="discovery-call">
+      <h3>start with a discovery call</h3>
+      <p>we'll discuss your idea, define core features, and plan the perfect MVP for your needs. this free consultation helps us understand your vision and create a clear roadmap.</p>
+    </div>
+
+    <ul class="process-list">
+      <li>
+        <img src="icons/plan.png" alt="Planning icon" class="process-icon">
+        <div class="process-content">
+          <strong>planning</strong>
+          <span>we map out the features and create a detailed development plan</span>
+        </div>
+      </li>
+      <li>
+        <img src="icons/design.png" alt="Design icon" class="process-icon">
+        <div class="process-content">
+          <strong>design</strong>
+          <span>we create wireframes and design the user interface</span>
+        </div>
+      </li>
+      <li>
+        <img src="icons/dev.png" alt="Development icon" class="process-icon">
+        <div class="process-content">
+          <strong>development</strong>
+          <span>we build your MVP using modern, scalable technology</span>
+        </div>
+      </li>
+      <li>
+        <img src="icons/launch.png" alt="Launch icon" class="process-icon">
+        <div class="process-content">
+          <strong>launch</strong>
+          <span>we help you deploy and get your MVP in front of users</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="portfolio">
+    <h2>apps we've built</h2>
+    <div class="app-grid">
+      <div class="app-card">
+        <img src="../jecca.png" alt="jecca app">
+        <h3>jecca</h3>
+        <p>a minimal daily task manager that resets every day</p>
+      </div>
+      <div class="app-card">
+        <img src="../fomo.png" alt="fomo app">
+        <h3>fomo</h3>
+        <p>gamified screen time management with friends</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <h2>book a meeting</h2>
+    <p>ready to turn your idea into reality? let's chat about your project.</p>
+    <a href="https://cal.com/james-agib/mvp" class="cta-button">schedule a call</a>
+    
+    <div class="async-option">
+      <h3>prefer async communication?</h3>
+      <p>submit your idea in one sentence and we'll review it within 24 hours. if we can help, we'll send you a payment link and get started right away.</p>
+      <a href="https://tally.so/r/315qdO" class="async-button">submit your idea</a>
+    </div>
+  </section>
+
 </body>
 </html> 
