@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Spoons – The Classic Card Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: linear-gradient(135deg, #ffffff, #56aeff);
+      color: #222;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      overflow: hidden;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1a3a5c;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #4a6a8a;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      background: #1a3a5c;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 3rem;
+      transition: opacity 0.2s;
+    }
+    .badge:hover { opacity: 0.9; }
+    .features {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 1.5rem;
+    }
+    .feature-emoji {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      width: 40px;
+      text-align: center;
+    }
+    .feature-text h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a3a5c;
+      margin-bottom: 4px;
+    }
+    .feature-text p {
+      font-size: 0.95rem;
+      color: #4a6a8a;
+      line-height: 1.5;
+    }
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: #56aeff;
+      border-radius: 2px;
+      margin: 2rem auto;
+    }
+    .how-it-works {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    .how-it-works h2 {
+      text-align: center;
+      font-size: 1.4rem;
+      color: #1a3a5c;
+      margin-bottom: 1.5rem;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 1.2rem;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: #56aeff;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step p {
+      font-size: 0.95rem;
+      color: #4a6a8a;
+      line-height: 1.5;
+    }
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #4a6a8a;
+    }
+    .footer a {
+      color: #1a3a5c;
+      text-decoration: none;
+    }
+    .footer a:hover { text-decoration: underline; }
+    .legal {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
+    .legal a {
+      color: #4a6a8a;
+      margin: 0 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="app-icon">
+      <img src="../spoons.png" alt="Digital Spoons icon">
+    </div>
+    <h1>Digital Spoons</h1>
+    <p class="subtitle">The classic card game, on your phone.</p>
+
+    <a href="#" class="badge">Coming Soon on the App Store</a>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-emoji">👥</div>
+        <div class="feature-text">
+          <h3>Local Multiplayer</h3>
+          <p>Play with friends nearby over Wi-Fi or Bluetooth. No internet required. One person hosts, others join with a room code.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-emoji">🤖</div>
+        <div class="feature-text">
+          <h3>Play vs Computer</h3>
+          <p>Practice against AI opponents with realistic timing. Great for learning the game or playing solo.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-emoji">🥄</div>
+        <div class="feature-text">
+          <h3>Real-Time Grab Phase</h3>
+          <p>When someone gets four of a kind, everyone scrambles for spoons. Reaction times tracked down to the millisecond.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-emoji">🃏</div>
+        <div class="feature-text">
+          <h3>Dealing Animations</h3>
+          <p>Watch cards get dealt to each player one by one, just like in real life. Choose who deals before each round.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-emoji">🎉</div>
+        <div class="feature-text">
+          <h3>Completely Free</h3>
+          <p>No ads, no in-app purchases, no accounts. Just the game.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="how-it-works">
+      <h2>How It Works</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Everyone gets 4 cards. Cards pass around the table one at a time.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Collect four of a kind, then grab a spoon from the center.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>Everyone else scrambles for the remaining spoons. The slowest player is out.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p>Last player standing wins!</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="footer">
+      <p>Made with ❤️ by <a href="https://x.com/agibjames">James Agib</a></p>
+      <p style="margin-top: 0.5rem;"><a href="mailto:jamesmagib@gmail.com">jamesmagib@gmail.com</a></p>
+      <div class="legal">
+        <a href="privacypolicy.html">Privacy Policy</a> ·
+        <a href="termsofservice.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
