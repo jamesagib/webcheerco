@@ -200,24 +200,6 @@
         user-select: none;
       }
     </style>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const wrapper = document.querySelector('.coming-soon-wrapper');
-        
-        wrapper.addEventListener('copy', function(e) {
-          e.preventDefault();
-          const funMessage = "haha you're sneaky...but you'll have to wait :)";
-          e.clipboardData.setData('text/plain', funMessage);
-        });
-
-        wrapper.addEventListener('selectstart', function(e) {
-          // Allow selection to start but prevent actual selecting
-          setTimeout(() => {
-            window.getSelection().removeAllRanges();
-          }, 0);
-        });
-      });
-    </script>
   </head>
   <body>
     <div class="container">
@@ -256,19 +238,16 @@
           </div>
         </a>
 
-        <div class="coming-soon-wrapper">
-          <div class="coming-soon-text">coming soon 🤫</div>
-          <div class="app-card blur">
-            <div class="app-icon">
-              <img src="fomo.png" alt="App icon" class="app-logo">
+        <div class="app-card">
+          <div class="app-icon">
+            <img src="6pm.png" alt="6pm icon" class="app-logo">
+          </div>
+          <div class="app-content">
+            <div class="app-info">
+              <h2 class="app-title">6pm</h2>
+              <p class="app-description">block social media every night, 6 PM to 6 AM</p>
             </div>
-            <div class="app-content">
-              <div class="app-info">
-                <h2 class="app-title">fomo</h2>
-                <p class="app-description">gamified screen time mangement with friends</p>
-              </div>
-              <span class="app-button">join waitlist</span>
-            </div>
+            <a href="https://apps.apple.com/app/6pm/id0000000000" class="app-button" style="background: #1a1a40;">$1.99</a>
           </div>
         </div>
       </div>
