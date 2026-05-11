@@ -3,6 +3,7 @@ import { HomeAnimations } from "./HomeAnimations";
 import { AuditTool } from "./AuditTool";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
+import { StartForm } from "./start/StartForm";
 import { verticals, cities } from "./local/data";
 
 const ArrowGlyph = () => (
@@ -294,7 +295,7 @@ export default function Home() {
             </p>
             <div className="hero-cta-stack">
               <a href="#contact" className="btn">
-                Get a free audit
+                Start your upgrade
                 <span className="arrow" aria-hidden="true">
                   <ArrowGlyph />
                 </span>
@@ -429,7 +430,7 @@ export default function Home() {
                 quarterly check-ins — to widen your reach and reduce legal risk.
               </p>
               <a href="#contact" className="card-link">
-                Book an audit
+                Start your upgrade
               </a>
             </article>
           </div>
@@ -828,20 +829,15 @@ export default function Home() {
           <h2 className="display">
             Make your site work for <em className="accent">everyone.</em>
           </h2>
-          <div className="cta-stack">
-            <a
-              href="mailto:jagib07@gmail.com?subject=Free%20website%20audit"
-              className="btn"
-            >
-              Get a free audit
-              <span className="arrow" aria-hidden="true">
-                <ArrowGlyph />
-              </span>
-            </a>
-            <a href="mailto:jagib07@gmail.com" className="cta-email">
-              jagib07@gmail.com
-            </a>
+          <p className="cta-lede">
+            Drop your details — we&apos;ll reply within 1 business day with a plan and a quote.
+          </p>
+          <div className="cta-form-wrap">
+            <StartForm />
           </div>
+          <a href="mailto:james@webcheer.co" className="cta-email">
+            Or email james@webcheer.co
+          </a>
         </div>
       </section>
 

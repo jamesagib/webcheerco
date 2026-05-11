@@ -73,7 +73,7 @@ export function SiteHeader({
           <div className="nav-talk">
             <span className="nav-talk-label">Talk with us</span>
             <Link href={contactHref} className="btn">
-              Start your audit
+              Start your upgrade
               <span className="arrow" aria-hidden="true">
                 <ArrowGlyph />
               </span>
@@ -117,7 +117,7 @@ export function SiteHeader({
             jagib07@gmail.com
           </a>
           <Link href={contactHref} className="btn mobile-drawer-cta">
-            Start your audit
+            Start your upgrade
             <span className="arrow" aria-hidden="true">
               <ArrowGlyph />
             </span>
