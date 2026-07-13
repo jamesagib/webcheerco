@@ -1,0 +1,5 @@
+# aegis.webcheer.co is a placeholder home for the Aegis app until it has its
+# own domain. Cloudflare Pages processes this file at the edge regardless of
+# how the Next.js build is configured, so it works whether the project is
+# wired up via the dashboard's framework preset or an explicit adapter.
+https://aegis.webcheer.co/* https://webcheer.co/aegis/:splat 200
